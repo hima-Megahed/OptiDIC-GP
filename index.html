@@ -1,0 +1,308 @@
+<!--https://bootswatch.com/spacelab/-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OptiDIC</title>
+
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">OptiDIC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03"
+            aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid m-3">
+        <div class="row">
+            <div class="col-3 align-self-center">
+                <h1>Input patient data</h1>
+            </div>
+            <div class="col">
+                <form>
+                    <h2>Evaluate your patient data</h2>
+
+                    <fieldset class="form-group">
+                        <legend>Check DIC-related underlying conditions</legend>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="dicConditionsInfection"
+                                    name="dicConditions">
+                                Infection: sepsis, other severe infections
+                            </label>
+                        </div>
+                        <div class="form-check disabled">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="dicConditionsSolidCancer"
+                                    name="dicConditions">
+                                Solid cancer: advanced stage with metastasis
+                            </label>
+                        </div>
+                        <div class="form-check disabled">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="dicConditionSurgery"
+                                    name="dicConditions">
+                                Solid cancer: advanced stage with metastasis
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <legend>Check other clinical conditions</legend>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="organFailure"
+                                    name="otherClinicalConditions">
+                                Organ failure
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="SIRSScore"
+                                    name="otherClinicalConditions">
+                                SIRS score ≥ 3
+                            </label>
+                        </div>
+                        <div class="form-check ">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="ICUCare"
+                                    name="otherClinicalConditions">
+                                Currently in ICU care
+                            </label>
+                        </div>
+                        <div class="form-group row">
+                            <label for="ApacheSCore" class="col-sm-3 col-form-label">APACHE II score if
+                                available</label>
+                            <div class="col-sm-2">
+                                <input type="number" class="form-control" id="ApacheSCore" name="ApacheSCore">
+                            </div>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <legend>Input your laboratory results</legend>
+                        <h6>Global coagulation test</h6>
+                        <div class="form-group row mr-1">
+                            <div class="col-sm-4">
+                                <label for="PTScore" class="col-form-label">PT (sec)</label>
+                                <input type="number" class="form-control" id="PTScore" name="PTScore">
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="PTActivity" class="col-form-label">PT activity (%)</label>
+                                <input type="number" class="form-control" id="PTActivity" name="PTActivity">
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="INR" class="col-form-label">INR</label>
+                                <input type="number" class="form-control" id="INR" name="INR">
+                            </div>
+                        </div>
+                        <div class="form-group row mr-1">
+                            <div class="col-sm-4">
+                                <label for="APTTScore" class="col-form-label">APTT (sec)</label>
+                                <input type="number" class="form-control" id="APTTScore" name="APTTScore">
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="ThrombinTime" class="col-form-label">Thrombin Time (sec)</label>
+                                <input type="number" class="form-control" id="ThrombinTime" name="ThrombinTime">
+                            </div>
+                        </div>
+                        <h6>Fibrin related markers</h6>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="FibrinogenScore" class="col-form-label">Fibrinogen (mg/dL)</label>
+                                    <input type="number" class="form-control" id="FibrinogenScore"
+                                        name="FibrinogenScore">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="D-Dimer" class="col-form-label">D-Dimer (mcg/mL)</label>
+                                    <input type="number" class="form-control" id="Dimer" name="D-Dimer">
+                                </div>
+                                <div class="col-sm-2 mt-5">
+                                    <label class="col-form-label"></label>
+                                    (measured in DDU)
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="FDPScore" class="col-form-label">FDP (mcg/mL)</label>
+                                    <input type="number" class="form-control" id="FDPScore" name="FDPScore">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="AntiThrombinScore" class="col-form-label">Anti-thrombin III (%)</label>
+                                    <input type="number" class="form-control" id="AntiThrombinScore"
+                                        name="AntiThrombinScore">
+                                </div>
+                            </div>
+                        </div>
+                        <h6>Complete Blood Count with differential count</h6>
+                        <div class="form-group mr-2">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label for="RBCCount" class="col-form-label">RBC count (×10^6/μL)</label>
+                                    <input type="number" class="form-control" id="RBCCount" name="RBCCount">
+                                </div>
+                                <div class="col-sm-3">
+                                    <label for="HbScore" class="col-form-label"> Hb (g/dL)</label>
+                                    <input type="number" class="form-control" id="HbScore" name="HbScore">
+                                </div>
+                                <div class="col-sm-3">
+                                    <label for="HctScore" class="col-form-label">Hct (%)</label>
+                                    <input type="number" class="form-control" id="HctScore" name="HctScore">
+                                </div>
+                                <div class="col-sm-3">
+                                    <label for="RDWScore" class="col-form-label">RDW (%)</label>
+                                    <input type="number" class="form-control" id="RDWScore" name="RDWScore">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="PLTCount" class="col-form-label">PLT count (×10^3/μL)</label>
+                                    <input type="number" class="form-control" id="PLTCount" name="PLTCount">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="PDWScore" class="col-form-label">PDW (%)</label>
+                                    <input type="number" class="form-control" id="PDWScore" name="PDWScore">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="MPVScore" class="col-form-label">MPV (fL)</label>
+                                    <input type="number" class="form-control" id="MPVScore" name="MPVScore">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-check mt-37">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" value="PLTChange"
+                                                id="PLTChange" name="PLTChange">
+                                            PLT change
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 PLTScoreParent">
+                                    <label for="PLTScore" class="col-form-label">PLT (D-1) (×10^3/μL)</label>
+                                    <input type="number" class="form-control" id="PLTScore" name="PLTScore">
+                                </div>
+                                <div class="col-sm-4 ElapsedTimeParent">
+                                    <label for="MPVScore" class="col-form-label">Elapsed time</label>
+                                    <select class="form-control" id="ElapsedTime">
+                                        <option>4</option>
+                                        <option>6</option>
+                                        <option>8</option>
+                                        <option>12</option>
+                                        <option>18</option>
+                                        <option>24</option>
+                                        <option>30</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="form-check mt-37">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" value="RUOParameters"
+                                                id="RUOParameters" name="RUOParameters">
+                                            RUO parameters
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 TMAScoreParent">
+                                    <label for="TMAScore" class="col-form-label">TMA score</label>
+                                    <input type="number" class="form-control" id="TMAScore " name="TMAScore">
+                                </div>
+                                <div class="col-sm-3 DeltaNeutrophilIndexParent">
+                                    <label for="DeltaNeutrophilIndex" class="col-form-label">Delta neutrophil
+                                        index</label>
+                                    <input type="number" class="form-control" id="DeltaNeutrophilIndex "
+                                        name="DeltaNeutrophilIndex">
+                                </div>
+                                <div class="col-sm-3 LUCScoreParent">
+                                    <label for="LUCScore" class="col-form-label"> LUC (%)</label>
+                                    <input type="number" class="form-control" id="LUCScore " name="LUCScore">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="NeutrophilScore" class="col-form-label">Neutrophil (%)</label>
+                                    <input type="number" class="form-control" id="NeutrophilScore " name="NeutrophilScore">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="LymphocyteScore" class="col-form-label">Lymphocyte (%) </label>
+                                    <input type="number" class="form-control" id="LymphocyteScore "
+                                        name="LymphocyteScore">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="EosinophilScore" class="col-form-label">Eosinophil (%)</label>
+                                    <input type="number" class="form-control" id="EosinophilScore " name="EosinophilScore">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="BasophilScore" class="col-form-label">Basophil (%)</label>
+                                    <input type="number" class="form-control" id="BasophilScore " name="BasophilScore">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="MonocyteScore" class="col-form-label">Monocyte (%)</label>
+                                    <input type="number" class="form-control" id="MonocyteScore "
+                                        name="MonocyteScore">
+                                </div>
+                                <div class="col-sm-4">
+                                </div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+
+                    <button type="submit" class="btn btn-outline-success btn-lg">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <script src="JS/main.js"></script>
+</body>
+
+</html>
